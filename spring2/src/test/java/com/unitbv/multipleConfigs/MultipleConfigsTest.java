@@ -11,7 +11,7 @@ public class MultipleConfigsTest {
     // TODO: create 2 classes: BeanA, BeanB and declare them as beans in 2 config class; use both of them in AppConfig class
     @Test
     public void test() {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ConfigA.class,ConfigB.class);
 
         BeanA beanA = context.getBean("beanA", BeanA.class);
         BeanB beanB = context.getBean("beanB", BeanB.class);
