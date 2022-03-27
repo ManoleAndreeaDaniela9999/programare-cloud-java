@@ -10,6 +10,7 @@ import java.io.IOException;
 
 @EntityScan(basePackages = "com.eureka.persons")
 @SpringBootApplication
+@EnableEurekaServer
 public class PersonsServer {
 
     private static Logger logger = LoggerFactory.getLogger(PersonsServer.class);

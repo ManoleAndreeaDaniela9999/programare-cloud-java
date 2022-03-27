@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.io.IOException;
 
 @SpringBootApplication
+@EnableEurekaServer
 public class DiscoveryServer {
 
     private static Logger logger = LoggerFactory.getLogger(DiscoveryServer.class);
