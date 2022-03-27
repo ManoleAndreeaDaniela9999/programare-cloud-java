@@ -3,6 +3,7 @@ package com.example.personsserver;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+@EnableEurekaServer
 @SpringBootTest
 class PersonsServerApplicationTests {
 

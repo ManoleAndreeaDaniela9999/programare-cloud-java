@@ -10,10 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/persons")
 public class PersonsController {
-    private PersonService personService = new ;
+    private PersonService personService;
 
     public PersonsController(PersonService personService) {
         this.personService = personService;
@@ -26,8 +27,6 @@ public class PersonsController {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Person> list() {
-        personService = new PersonsController();
-        personService.findAll();
         return new ArrayList<>();
     }
 
