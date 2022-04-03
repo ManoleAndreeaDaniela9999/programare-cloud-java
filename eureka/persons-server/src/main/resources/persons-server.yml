@@ -28,10 +28,10 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${EUREKA_URI:http://localhost:3000/eureka}
-  instance:
-    hostname: localhost
-    preferIpAddress: true
+      defaultZone: http://localhost:3000/eureka/
+    instance:
+      hostname: localhost
+      preferIpAddress: true
 
 info:
   app:
