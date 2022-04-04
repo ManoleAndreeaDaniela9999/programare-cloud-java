@@ -62,9 +62,8 @@ public class PersonsController {
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/show/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Person show(@PathVariable Long id) {
-        Optional<Person> p = personService.findById(id);
-        if (!p.isPresent()) throw new NotFoundException(Person.class, id);
-        return p.get();
+        Person p = personService.findById(id).orElseThrow(()->new NotFoundException(Person.class, id));
+        return p;
     }
 
     /**
@@ -79,11 +78,11 @@ public class PersonsController {
     @PutMapping("/update/{id}")
     public void update(@RequestBody Person updatedPerson, @PathVariable Long id) {
         Person p = personService.findById(id).orElseThrow(() -> new NotFoundException(Person.class, id));
-        p.setFirstName(updatedPerson.getFirstName());
-        p.setHiringDate(updatedPerson.getHiringDate());
-        p.setLastName(updatedPerson.getLastName());
-        p.setPassword(updatedPerson.getPassword());
         p.setUsername(updatedPerson.getUsername());
+        p.setPassword(updatedPerson.getPassword());
+        p.setFirstName(updatedPerson.getFirstName());
+        p.setLastName(updatedPerson.getLastName());
+        p.setHiringDate(updatedPerson.getHiringDate());
         personService.save(p);
     }
 
