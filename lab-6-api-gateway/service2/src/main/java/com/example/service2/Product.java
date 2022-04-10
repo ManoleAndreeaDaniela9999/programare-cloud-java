@@ -5,24 +5,24 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
-public class Product {
+public class Product implements Serializable {
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false,updatable = false)
     private Long id;
 
     @NotNull
-    @Column(nullable = false, unique = true)
+    @Column(name = "name",nullable = false, unique = true)
     private String name;
 
     @NotNull
-    @Column(nullable = false, unique = true)
+    @Column(name = "quantity",nullable = false, unique = true)
     private int quantity;
 }
