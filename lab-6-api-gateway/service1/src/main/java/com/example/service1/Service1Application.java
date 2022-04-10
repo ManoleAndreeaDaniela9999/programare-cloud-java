@@ -15,6 +15,4 @@ public class Service1Application {
 	// 2. return should be a string returning a greeting: Hello Brasov
 	// 3. print request headers
 	// 4. register the service in eureka
-
-
 }
