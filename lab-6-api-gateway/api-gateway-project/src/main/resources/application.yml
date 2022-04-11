@@ -17,7 +17,9 @@ spring:
         - id: service1Module
           uri: http://localhost:8081/
           predicates:
-            - Path=/api/**
+            - Path=/greeting/**
+          filters:
+            - RewritePath=/greeting/(?<segment>.*),/api/greeting/$\{segment}
         - id: service2Module
           uri: http://localhost:8082/
           predicates:
