@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: discovery-service
+# Configure this Discovery Server
+#TODO here you add configurations for server
+server:
+  port: 3000
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:3000/eureka/
+
+logging:
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  level:
+    root: INFO
+    org.springframework: DEBUG
+    com.apress.cems: DEBUG
