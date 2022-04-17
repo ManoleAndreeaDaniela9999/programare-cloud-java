@@ -23,6 +23,7 @@
     <module>rest-service</module>
     <module>eureka</module>
     <module>lab-6-api-gateway</module>
+    <module>spring-cloud-config-server</module>
   </modules>
 
   <dependencies>
